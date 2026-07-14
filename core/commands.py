@@ -1,3 +1,4 @@
+from modules.apps import uygulama_ac
 from datetime import datetime
 
 def komut_calistir(komut):
@@ -20,5 +21,7 @@ def komut_calistir(komut):
 
     elif komut == "tarih":
         return datetime.now().strftime("%d.%m.%Y")
-
+    elif komut.endswith("aç"):
+        uygulama = komut.replace(" aç", "")
+        return uygulama_ac(uygulama)
     return None
