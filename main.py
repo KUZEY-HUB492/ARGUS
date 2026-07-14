@@ -1,26 +1,22 @@
-from brain import cevap_ver
-from commands import komut_calistir
-from tts import konus
+from core.commands import komut_calistir
 
-print("ARGUS başlatılıyor...")
+print("========== ARGUS v0.3 ==========")
+print("Yazılı mod aktif.")
+print("Çıkmak için 'çık' yaz.\n")
 
 while True:
+    komut = input("Sen > ").strip()
 
-    komut = input("Sen: ").lower()
+    if not komut:
+        continue
 
-    if komut == "çık":
-        mesaj = "Görüşmek üzere efendim."
-        print("ARGUS:", mesaj)
-        konus(mesaj)
+    if komut.lower() == "çık":
+        print("ARGUS > Görüşmek üzere.")
         break
 
     cevap = komut_calistir(komut)
 
     if cevap:
-        print("ARGUS:", cevap)
-        konus(cevap)
-        continue
-
-    cevap = cevap_ver(komut)
-    print("ARGUS:", cevap)
-    konus(cevap)
+        print(f"ARGUS > {cevap}")
+    else:
+        print("ARGUS > Bu komutu henüz bilmiyorum.")
