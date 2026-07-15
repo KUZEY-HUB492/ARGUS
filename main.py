@@ -1,8 +1,34 @@
 from core.commands import komut_calistir
+from core.parser import komutlari_ayir
+
+
+print(r"""
+=========================================
+
+        █████╗ ██████╗  ██████╗ ██╗   ██╗███████╗
+       ██╔══██╗██╔══██╗██╔════╝ ██║   ██║██╔════╝
+       ███████║██████╔╝██║  ███╗██║   ██║███████╗
+       ██╔══██║██╔══██╗██║   ██║██║   ██║╚════██║
+       ██║  ██║██║  ██║╚██████╔╝╚██████╔╝███████║
+       ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚══════╝
+
+
+              A R G U S  v0.4.0
+
+        Advanced Response & Guidance
+             Utility System
+
+=========================================
+
+Sistem hazır.
+""")
+
+
 
 print("========== ARGUS v0.3 ==========")
 print("Yazılı mod aktif.")
 print("Çıkmak için 'çık' yaz.\n")
+
 
 while True:
     komut = input("Sen > ").strip()
@@ -14,9 +40,12 @@ while True:
         print("ARGUS > Görüşmek üzere.")
         break
 
-    cevap = komut_calistir(komut)
+    komutlar = komutlari_ayir(komut)
 
-    if cevap:
-        print(f"ARGUS > {cevap}")
-    else:
-        print("ARGUS > Bu komutu henüz bilmiyorum.")
+    for k in komutlar:
+        cevap = komut_calistir(k)
+
+        if cevap:
+            print(f"ARGUS > {cevap}")
+        else:
+            print(f"ARGUS > '{k}' komutunu anlayamadım.")
