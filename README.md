@@ -17,7 +17,7 @@ ARGUS; uygulama açabilir, web sitelerine girebilir, sistem bilgilerini göstere
 💬 Basit ve hızlı komut satırı arayüzü
 🛠️ Kurulum
 1. Depoyu klonlayın
-git clone https://github.com/KULLANICI_ADIN/ARGUS.git
+git clone https://github.com/KUZEY-HUB492/ARGUS.git
 2. Gerekli kütüphaneleri yükleyin
 pip install -r requirements.txt
 3. Yapılandırma
