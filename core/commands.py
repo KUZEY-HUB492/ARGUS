@@ -1,3 +1,7 @@
+print("YENI COMMANDS.PY CALISTI")
+import random
+from datetime import datetime
+from config import AI_NAME, VERSION
 from modules.learning import (
     komut_ogret,
     komut_getir,
@@ -10,7 +14,10 @@ from modules.modes import mod_calistir
 from modules.web import site_ac
 from modules.apps import uygulama_ac, uygulama_kapat
 from datetime import datetime
+import random
+from datetime import datetime
 
+print("YENI COMMANDS.PY CALISTI")
 
 def komut_calistir(komut):
     def komut_temizle(k):
@@ -75,8 +82,7 @@ def komut_calistir(komut):
 
         return f'"{kisa.strip()}" komutunu öğrendim efendim.'
 
-    if komut == "merhaba":
-        return "Merhaba. Sana nasıl yardımcı olabilirim?"
+    
 
     if komut == "yardım":
         return (
@@ -91,9 +97,17 @@ def komut_calistir(komut):
             "- geliştirme modu\n"
             "- uygulama aç\n"
             "- uygulama kapat\n"
-            "- hafıza sistemi"
+            "- hafıza sistemi\n"
+            "- web sitesi aç\n"
+            "- öğren: kısa komut = gerçek komut\n"
         )
-
+    if komut == "versiyon":
+        return (
+            f"{AI_NAME} {VERSION}\n\n"
+            "Advanced Response & Guidance Utility System\n"
+            "Geliştirici: KUZEY-HUB492"
+        )
+    
     # Saat ve tarih
     if komut == "saat":
         return datetime.now().strftime("%H:%M:%S")
@@ -159,5 +173,35 @@ def komut_calistir(komut):
             return site_ac(isim)
 
         return uygulama_ac(isim)
+
+    if komut in ["merhaba", "selam", "selamlar", "hey"]:
+        cevaplar = [
+            "Merhaba efendim. Size nasıl yardımcı olabilirim?",
+            "Hoş geldiniz efendim.",
+            "Tekrar merhaba efendim.",
+            "Sizi görmek güzel efendim.",
+            "Merhaba efendim. ARGUS hizmetinizde."
+        ]
+
+        return random.choice(cevaplar)
+    if komut in ["teşekkürler", "teşekkür ederim", "sağ ol", "eyvallah"]:
+        cevaplar = [
+            "Rica ederim efendim.",
+            "Her zaman efendim.",
+            "Yardımcı olabildiysem ne mutlu bana.",
+            "Görevim efendim.",
+            "Ne demek efendim."
+        ]
+
+        return random.choice(cevaplar)
+    if komut in ["nasılsın", "iyi misin"]:
+        cevaplar = [
+            "Gayet iyiyim efendim. Siz nasılsınız?",
+            "Sistemlerim normal çalışıyor efendim.",
+            "Her şey yolunda efendim.",
+            "Hazırım efendim."
+        ]
+
+        return random.choice(cevaplar)
 
     return None

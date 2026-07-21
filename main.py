@@ -14,7 +14,7 @@ print(r"""
        ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚══════╝
 
 
-              A R G U S  v0.6.0
+              A R G U S  v1.1.0
 
         Advanced Response & Guidance
              Utility System
@@ -24,7 +24,7 @@ print(r"""
 Sistem hazır.
 """)
 
-print("========== ARGUS v0.6.0 ==========")
+print("========== ARGUS v1.1.0 ==========")
 print("Yazılı mod aktif.")
 print("Çıkmak için 'çık' yaz.\n")
 
